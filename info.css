@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+body{
+    font-family: jost;
+    font-size: 14.5px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+@font-face{
+    font-family: jost;
+    src: url("fonts/jost/Jost-VariableFont_wght.ttf");
+}
+
+.inp{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(19, 17, 17, 0.192);
+
+}
+
+.name{
+    display: flex;
+    width: 100%;
+}
+
+.first{
+    border: 1px solid rgba(19, 17, 17, 0.192);
+    border-radius: 8px;
+    width: 23em;
+    padding: 20px;
+}
+
+.foot{
+    display: flex;
+    gap: 20em;
+}
+
+button{
+    background-color: #f76b6a;
+    color: #fff;
+    border-color: #f76b6a;
+    padding: 10px;
+}
+
+nav{
+    display: flex;
+}
+
+.first-section{
+    width: 100%;
+}
+
+.last-section{
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100vh;
+    padding: 40px;
+}
+
+main{
+    display: flex;
+    gap: 20px;
+
+}
+
+span{
+    margin-left: 65%;
+}
+
+hr{
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.location{
+    display: flex;
+}
+
+.phone{
+    padding: 15px;
+    width: 100%;
+}
+
+#items-total{
+    font-weight: bolder;
+    margin-top: 1.5rem;
+}
+
+#info-price{
+    display: flex;
+    gap: 16px;
+}
+
+#subtotal{
+    margin-left: 28em;
+}
+
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+a:hover{
+    text-decoration: none;
+    color: #f76b6a;
+}
+
+#parentElement{
+    cursor: pointer;
+}
+
+.auth-submit{
+    border-radius: 8px;
+    border: 1px solid rgba(19, 17, 17, 0.192);
+}
+
+.auth-input{
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid rgba(19, 17, 17, 0.192);
+}
+
+#continue-btn{
+    border-radius: 8px;
+    border: 1px solid rgba(19, 17, 17, 0.192);
+}
+
+/* Responsivenes */
+
+@media only screen and (max-width:991.99px){
+    .foot{
+        gap: 60px;
+    }
+    
+}
+
+@media only screen and (max-width: 767.99px){
+    main{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+    #flat-rate{
+        margin-left: 10rem;
+    }
+}
+
+#info-total{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 115px;
+}
+
+.return-btn{
+    border-radius: 8px;
+    border: 1px solid rgba(19, 17, 17, 0.192);
+    background-color: #f76b6a;
+    color: #fff;
+    border-color: #f76b6a;
+    padding: 10px;
+}
+
+.return-btn:hover{
+    color: #fff;
+}
+
+nav{
+    font-size: large;
+    margin-top: 20px;
+}
+
+.bill{
+    font-size: large;
+}
