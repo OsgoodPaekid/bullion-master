@@ -75,7 +75,7 @@
 
         function getOrderStatus(orderNumber) {
             if (orderNumber === "BULL4765A34M1") {
-                return "Shipped";  // Changed from "Processing" to "Shipped"
+                return "Shipped";
             } else {
                 return "Invalid Order Number";
             }
@@ -108,10 +108,10 @@
                 if (index === 0 && status !== "Invalid Order Number") {
                     element.classList.remove('bg-gray-200', 'text-gray-600');
                     element.classList.add('bg-green-500', 'text-white');
-                } else if(index === 1 && (status === "Processing" || status === "Shipped")){
+                } else if (index === 1 && (status === "Processing" || status === "Shipped")) {
                     element.classList.remove('bg-gray-200', 'text-gray-600');
                     element.classList.add('bg-green-500', 'text-white');
-                } else if (index === 2 && status === "Shipped"){
+                } else if (index === 2 && status === "Shipped") {
                     element.classList.remove('bg-gray-200', 'text-gray-600');
                     element.classList.add('bg-green-500', 'text-white');
                 } else {
@@ -120,25 +120,33 @@
                 }
             });
 
-            updateCityList(cities);
+            const currentDestination = 'Italy'; // Assume Spain as current destination for demo
+            updateCityList(cities, currentDestination);
         }
 
-        function updateCityList(cities) {
+        function updateCityList(cities, currentDestination) {
             const cityList = document.getElementById('cityList');
             cityList.innerHTML = '';
-            cities.forEach((city) => {
-                const li = document.createElement('li');
-                li.className = 'flex items-center space-x-3';
-                
-                // Only style London differently
-                const isCurrentLocation = city.includes('London');
-                
-                li.innerHTML = `
-                    <span class="${isCurrentLocation ? 'text-green-600 font-semibold' : 'text-gray-700'}">${city} ${isCurrentLocation ? '(Departed)' : ''}</span>
-                `;
-                cityList.appendChild(li);
+
+            // Find the index of Spain in the cities array
+            const spainIndex = cities.findIndex(city => city.includes('Italy'));
+
+            cities.forEach((city, index) => {
+            const li = document.createElement('li');
+            li.className = 'flex items-center space-x-3';
+
+            const isCurrentDestination = city.includes(currentDestination);
+            const isBeforeSpain = index < spainIndex;
+            const isVisited = isBeforeSpain || isCurrentDestination;
+
+            li.innerHTML = `
+                <span class="${isVisited ? 'text-green-600 font-semibold' : 'text-gray-700'}">
+                    ${city} ${isCurrentDestination ? '(Arrived)' : ''}
+                </span>
+            `;
+            cityList.appendChild(li);
             });
-        }
+        } 
     </script>
 </body>
 </html>
